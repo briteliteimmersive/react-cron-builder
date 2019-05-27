@@ -80,7 +80,7 @@ export default class CronBuilder extends PureComponent {
     };
 
     render() {
-        const {cronExpression, showResult} = this.props;
+        const {buttonText, cronExpression, showResult} = this.props;
         const {activeIndex, Component, generatedExpression} = this.state;
         return (
             <div {...styleNameFactory()} >
@@ -121,7 +121,7 @@ export default class CronBuilder extends PureComponent {
                         onClick={this.generateExpression}
                         data-action
                     >
-                        Generate cron expression
+                        {buttonText ? buttonText : 'Generate Expression'}
                     </button>
                 </div>
                 <If condition={!!generatedExpression && showResult}>
